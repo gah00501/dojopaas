@@ -1,9 +1,11 @@
-language: php # ƒeƒXƒgŒ¾Œê
-php:
-- 5.5 # ŠÂ‹«‚»‚Ì1
-- 5.4 # ŠÂ‹«‚»‚Ì2
-- hhvm # ŠÂ‹«‚»‚Ì3
-script: phpunit Test.php # ‚±‚Ìˆ—‚ªCI‚Æ‚µ‚Ä‘–‚é
+language: node_js
+node_js:
+  - "7"
+before_script: npm install
+script:
+  # - npm test
+  # - npm run deploy
+  - npm run test:csv
 after_success:
   - bash ./bin/deploy.sh
 env:
